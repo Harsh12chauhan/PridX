@@ -32,7 +32,7 @@ const App = () => {
             headerStyle: {
               backgroundColor: "black",
             },
-            headerRight: () => <Logo/>
+            headerRight: () => <Logo />,
           }}
         />
         <Stack.Screen
@@ -44,7 +44,7 @@ const App = () => {
             headerStyle: {
               backgroundColor: "black",
             },
-            headerRight: () => <Logo/>
+            headerRight: () => <Logo />,
           }}
         />
       </Stack.Navigator>

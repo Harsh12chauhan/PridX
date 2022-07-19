@@ -4,12 +4,12 @@
     "slug": "PridX",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/PridX.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/PridX.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#050505"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,12 +21,12 @@
       "supportsTablet": true
     },
     "android": {
-
-      "versionCode":1,
+      "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/PridX.png",
+        "backgroundColor": "#050505"
+      },
+      "package": "com.harshchauhan_12.PridX"
     },
     "web": {
       "favicon": "./assets/favicon.png"

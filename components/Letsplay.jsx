@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { Text, View, TextInput, Button, StyleSheet, Image } from 'react-native'
+import { Text, View, TextInput, Button, StyleSheet, Image,ImageBackground } from 'react-native'
 
-const ranum = Math.floor((Math.random() * 100) + 1);
+const harsh = Math.floor((Math.random() * 100) + 1);
 
 const Letsplay = ({ navigation }) => {
-    // const ranum = 50;
+
+    const yash = Math.floor((Math.random() * 100) + 1);
+    const [ranum, setranum] = useState(harsh)
     const [number, setNumber] = useState('')
     const [gameText, setGameText] = useState('Guess The Number...?')
     const [count, setCount] = useState(0)
@@ -32,6 +34,8 @@ const Letsplay = ({ navigation }) => {
                     navigation.navigate("Win", { count, numarray });
                     setCount(0);
                     setNumarray([]);
+                    setGameText('Guess The Number...?');
+                    setranum(yash);
                 }
             }
             else {
@@ -42,27 +46,27 @@ const Letsplay = ({ navigation }) => {
     }
 
     return (
-       <>
-        <View style={styles.container}>
-             <View style={styles.Img2}>
-               <Image style={{width:290,height:190}} source={require('../Image/i.gif')}/>
+        <>
+            <View style={styles.Img2}>
+               <ImageBackground style={{width:299,height:130,marginTop:20}} source={require('../Image/31.gif')}/>
         </View>
-               </View>
-        <View style={styles.container2}>
-            <Text style={styles.text2}>{gameText}</Text>
-            <Text style={styles.emoji}>
-                {number.split(' ').map((word) => word && '🤔').join(' ')}
-            </Text>
-            <Text style={{ fontSize: 9 , color: 'red', marginBottom:6 }}>Guess the number between 0 - 100</Text>
-            <TextInput style={styles.inputbox} onChangeText={newNumber => setNumber(newNumber)} defaultValue={number} keyboardType={'numeric'} />
-            <Text style={styles.array1}>[
-                {numarray.map((a, index) => {
-                    return <Text key={index} style={styles.array1}> {a} </Text>
-                })} ]
-            </Text>
-            <View style={styles.btn1}>
-                <Button title='Guess' color={'#0be0ab'} onPress={logic} />
-            </View></View></>
+            <View style={styles.container2}>
+                <Text style={styles.text2}>{gameText}</Text>
+                <Text style={styles.emoji}>
+                    {number.split(' ').map((word) => word && '🤔').join(' ')}
+                </Text>
+                <Text style={{ fontSize: 12, color: 'yellow', marginBottom: 6 }}>Guess the number From 0 - 100</Text>
+                <TextInput style={styles.inputbox} onChangeText={newNumber => setNumber(newNumber)} defaultValue={number} keyboardType={'numeric'} />
+                <Text style={styles.array1}>[
+                    {numarray.map((a, index) => {
+                        return <Text key={index} style={styles.array1}> {a} </Text>
+                    })} ]
+                </Text>
+                <View style={styles.btn1}>
+                    <Button title='Guess' color={'#0be0ab'} onPress={logic} />
+                </View>
+            </View>
+        </>
     )
 }
 
@@ -72,12 +76,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "black",
-        alignItems: "center",
+        alignItems: "center"
     },
     container2: {
         flex: 2,
         backgroundColor: "black",
         alignItems: "center",
+        justifyContent: "center"
     },
     text1: {
         fontSize: 50,
@@ -87,13 +92,13 @@ const styles = StyleSheet.create({
         borderBottomColor: 'red'
     },
     text2: {
-        marginTop: 25,
+        marginTop: 20,
         padding: 8,
         fontSize: 25,
         color: '#0be0ab',
         borderWidth: 2,
         borderColor: '#0be0ab',
-        borderRadius:12,
+        borderRadius: 12,
         width: 300,
         textAlign: "center"
     },
@@ -110,7 +115,7 @@ const styles = StyleSheet.create({
         color: "yellow",
         borderWidth: 2,
         borderColor: 'red',
-        borderRadius:10,
+        borderRadius: 10,
         width: 150,
         height: 50,
         textAlign: 'center'
@@ -127,8 +132,10 @@ const styles = StyleSheet.create({
         borderWidth: 8,
         borderColor: '#0be0ab',
         borderRadius: 25,
-    },Img2:{
-        marginTop:50
+    }, Img2: {
+        alignItems:"center",
+        backgroundColor:"black",
+        
     }
 
 })
